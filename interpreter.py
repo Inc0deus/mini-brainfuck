@@ -6,7 +6,7 @@
  ██████╔╝ ██║  ██║ ██║  ██║ ██║ ██║ ╚████║ ██║      ╚██████╔╝ ╚██████╗ ██║  ██╗
  ╚═════╝  ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝ ╚═╝  ╚═══╝ ╚═╝       ╚═════╝   ╚═════╝ ╚═╝  ╚═╝ Inc0deus
 
-intr:
+instr:
     > increment data ptr
     < decrement data ptr
     + increment byte at data ptr
@@ -75,25 +75,25 @@ MAX_CONSOLE_DISPLAY = 20
 console = []
 
 while instr_ptr < len(code):
-    intr = code[instr_ptr]
+    instr = code[instr_ptr]
 
-    # basic intr
-    if intr == ">":
+    # basic instr
+    if instr == ">":
         data_ptr += 1
         if data_ptr > MAX_LENGTH: raise MemoryError(f"{C_RED}DATA POINTER OVER {MAX_LENGTH}{C_WHITE}")
         if data_ptr >= len(data): data.append(0)
-    if intr == "<":
+    if instr == "<":
         data_ptr -= 1
         if data_ptr < 0: raise MemoryError(f"{C_RED}DATA POINTER UNDER 0{C_WHITE}")
-    if intr == "+":
+    if instr == "+":
         data[data_ptr] += 1
         if 0 > data[data_ptr] or data[data_ptr] > 255: raise ValueError(f"{C_RED}DATA AT ({data_ptr}) AS A VALUE OUT OF RANGE{C_WHITE}")
-    if intr == "-":
+    if instr == "-":
         data[data_ptr] -= 1
         if 0 > data[data_ptr] or data[data_ptr] > 255: raise ValueError(f"{C_RED}DATA AT ({data_ptr}) AS A VALUE OUT OF RANGE{C_WHITE}")
-    if intr == "[":
+    if instr == "[":
         if data[data_ptr] == 0: instr_ptr = loop_end[instr_ptr]
-    if intr == "]":
+    if instr == "]":
         if data[data_ptr] != 0: instr_ptr = loop_start[instr_ptr]
 
     if len(console) > MAX_CONSOLE_DISPLAY:
@@ -106,12 +106,12 @@ while instr_ptr < len(code):
     print(f"{C_RED} " + " "*(4*data_ptr) + f"^——{C_WHITE}")
     for i in range(len(console)): print(console[i])
 
-    # IO intr
-    if intr == ".":
+    # IO instr
+    if instr == ".":
         out = f"{data[data_ptr]:3} {C_GREEN}{repr(chr(data[data_ptr]))}{C_WHITE}"
         if ASCII_IO: out = repr(chr(data[data_ptr]))
         console.append(f"{C_CYAN}OUTPUT:{C_WHITE} {out}")
-    if intr == ",":
+    if instr == ",":
         inp = input(f"{C_YELLOW}INPUT :{C_WHITE} ")
         if not inp.isdigit(): data[data_ptr] = ord(inp)
         elif 0 <= int(inp) <= 255: data[data_ptr] = int(inp)

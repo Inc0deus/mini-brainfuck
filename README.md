@@ -1,2 +1,4 @@
 # mini-brainfuck
-A small brainfuck interpreter in Python
+A small brainfuck interpreter ('mini_brainfuck.py') in Python
+
+

@@ -1,6 +1,6 @@
 A small brainfuck interpreter («mini_brainfuck.py») in Python
 
-'mini_brainfuck' is 318 characters. The main table has (as in the original) 30000 slots available, but can hold any integer (not limited to 8 bits).
+'mini_brainfuck' is 316 characters. The main table has (as in the original) 30000 slots available, but can hold any integer (not limited to 8 bits).
 
 There is also a larger interpreter ("interpreter.py") with error handling and a real terminal interface, which correctly displays inputs and outputs as well as the main table. The file also contains all the instructions available in brainfuck.
 

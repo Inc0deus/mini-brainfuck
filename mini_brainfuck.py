@@ -2,7 +2,7 @@
 Mini brainfuck (Inc0deus)
 """
 
-c,s,l,d,p,q=open(input()).read(),[],{},[0]*30000,0,0
+c,s,l,d,p,q=open(input()).read(),[],{},[0]*3e4,0,0
 for i in range(len(c)):
  if c[i]=="[":s.append(i)
  if c[i]=="]":j=s.pop();l[j],l[i]=i,j

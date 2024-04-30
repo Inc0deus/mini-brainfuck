@@ -15,9 +15,6 @@ instructions:
     , asign input byte at data ptr
     [ if byte at data ptr is 0, jump to matching ] else continue
     ] if byte at data ptr is not 0, jump to matching [ else continue
-
-HELLO WORLD !: "++++++++++[->+++++++>+++++++>+++++++++>+++>+<<<<<]>++.>-.<++++..+++.>>>++.<---.<<.>>-----.<<---.>-.>>+.>+++."
-
 """
 
 import time

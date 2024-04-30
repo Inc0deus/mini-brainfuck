@@ -6,7 +6,7 @@
  ██████╔╝ ██║  ██║ ██║  ██║ ██║ ██║ ╚████║ ██║      ╚██████╔╝ ╚██████╗ ██║  ██╗
  ╚═════╝  ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝ ╚═╝  ╚═══╝ ╚═╝       ╚═════╝   ╚═════╝ ╚═╝  ╚═╝ Inc0deus
 
-instr:
+instructions:
     > increment data ptr
     < decrement data ptr
     + increment byte at data ptr
@@ -16,13 +16,13 @@ instr:
     [ if byte at data ptr is 0, jump to matching ] else continue
     ] if byte at data ptr is not 0, jump to matching [ else continue
 
-HELLO WORLD ! -> "++++++++++[->+++++++>+++++++>+++++++++>+++>+<<<<<]>++.>-.<++++..+++.>>>++.<---.<<.>>-----.<<---.>-.>>+.>+++."
+HELLO WORLD !: "++++++++++[->+++++++>+++++++>+++++++++>+++>+<<<<<]>++.>-.<++++..+++.>>>++.<---.<<.>>-----.<<---.>-.>>+.>+++."
 
 """
 
 import time
 
-# ANSSI CODE
+# ANSSI CODE (not all used)
 C_GRAY       = "\033[90m"
 C_RED        = "\033[31m"
 C_GREEN      = "\033[32m"
